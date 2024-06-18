@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:movie_app/widgets/movie_card.dart';
 import 'most_watched.dart';
+import 'movie_card.dart';
 import 'search_bar.dart';
 
 class HomeScreenContent extends StatelessWidget {

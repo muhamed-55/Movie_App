@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:movie_app/Screens/home_screen.dart';
-import 'package:movie_app/Screens/movie_details_screen.dart';
-import 'package:movie_app/cubit/movie_cubit.dart';
+import 'package:movie_app/cubit/most_watched_movie_cubit.dart';
+
+import 'UI/Screens/home_screen.dart';
 
 void main() {
   runApp(const MyApp());

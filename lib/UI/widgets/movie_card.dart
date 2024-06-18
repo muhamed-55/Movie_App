@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:movie_app/Screens/movie_details_screen.dart';
+
+import '../Screens/movie_details_screen.dart';
 
 class MovieCard extends StatelessWidget {
   Image ?image ;

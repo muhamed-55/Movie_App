@@ -1,4 +1,4 @@
-part of 'movie_cubit.dart';
+part of 'most_watched_movie_cubit.dart';
 
 @immutable
 abstract class MovieState {}

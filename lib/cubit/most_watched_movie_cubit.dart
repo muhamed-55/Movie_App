@@ -4,7 +4,7 @@ import 'package:movie_app/data/movie_model.dart';
 
 import '../data/api_service.dart';
 
-part 'movie_state.dart';
+part 'most_watched_movie_state.dart';
 
 class MovieCubit extends Cubit<MovieState> {
   MovieCubit() : super(MovieInitial());

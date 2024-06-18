@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:movie_app/Screens/movie_details_screen.dart';
-import 'package:movie_app/cubit/movie_cubit.dart';
+import 'package:movie_app/cubit/most_watched_movie_cubit.dart';
+
+import '../Screens/movie_details_screen.dart';
 class MostWatched extends StatelessWidget {
   const MostWatched({
     super.key,
@@ -33,8 +34,7 @@ class MostWatched extends StatelessWidget {
                     ),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(14),
-                      child: Image.network("https://static1.srcdn.com/wordpress/wp-content/uploads/2022/05/Every-marvel-character-who-appears-in-Doctor-strange-multiverse-of-madness.jpg",
-                          fit: BoxFit.cover),
+                      child: Image.network("https://static1.srcdn.com/wordpress/wp-content/uploads/2022/05/Every-marvel-character-who-appears-in-Doctor-strange-multiverse-of-madness.jpg", fit: BoxFit.cover),
                     ),
                   ),
                 ),
@@ -48,14 +48,14 @@ class MostWatched extends StatelessWidget {
                         state.mostWatchedMovie.name ?? '',
                         style: GoogleFonts.bebasNeue(
                             color: Colors.white,
-                            fontSize: 20,
+                            fontSize: 18,
                             fontWeight: FontWeight.bold,
-                            letterSpacing: 3
+                            letterSpacing: 2
                         ),
                       ),
                       const SizedBox(height: 5,),
                       Text(
-                        'IN THE MULTIVERSE OF MADNESS',
+                        state.mostWatchedMovie.tagline?? '',
                         style: GoogleFonts.aboreto(
                             color: Colors.white,
                             fontSize: 10,
