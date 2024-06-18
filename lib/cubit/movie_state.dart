@@ -1,0 +1,21 @@
+part of 'movie_cubit.dart';
+
+@immutable
+abstract class MovieState {}
+
+
+class MovieInitial extends MovieState {}
+
+class MovieLoading extends MovieState{}
+
+class MovieSuccess extends MovieState{
+  final MostWatchedMovie mostWatchedMovie;
+  MovieSuccess(this.mostWatchedMovie);
+}
+
+class MovieError extends MovieState{
+  String? error ;
+  MovieError({this.error});
+}
+
+
