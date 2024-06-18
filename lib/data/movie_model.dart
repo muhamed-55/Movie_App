@@ -1,13 +1,13 @@
+import 'package:json_annotation/json_annotation.dart';
+part 'movie_model.g.dart';
 
-class MostWatchedMovie{
-   String name;
-   String posterPath;
-MostWatchedMovie({required this.name,required this.posterPath});
+@JsonSerializable()
+class MostWatchedMovie {
+  String? name;
+  String? posterPath;
+  MostWatchedMovie({required this.name, required this.posterPath});
 
-   factory MostWatchedMovie.fromJson(Map<String, dynamic> json) {
-     return MostWatchedMovie(
-       name: json['belongs_to_collection']['name'],
-       posterPath: json['belongs_to_collection']['poster_path'],
-     );
-   }
+  factory MostWatchedMovie.fromJson(Map<String, dynamic> json) => _$MostWatchedMovieFromJson(json);
+
+  Map<String, dynamic> toJson() => _$MostWatchedMovieToJson(this);
 }
