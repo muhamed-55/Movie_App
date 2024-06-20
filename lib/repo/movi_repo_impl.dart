@@ -1,8 +1,13 @@
 import 'dart:convert';
-import 'package:http/http.dart' as http;
-import 'package:movie_app/repo/movie_repo.dart';
-import '../data/movie_model.dart';
 
+import 'package:http/http.dart' as http;
+import 'package:injectable/injectable.dart';
+
+import '../data/movie_model.dart';
+import 'movie_repo.dart';
+
+@named
+@Injectable(as: MovieRepo)
 class MovieRepoImpl implements MovieRepo {
   static const String apiKey = 'e46ffa96922438c36f23441d9f26d8e8';
   String url = 'https://api.themoviedb.org/3/movie/653346?api_key=$apiKey';
