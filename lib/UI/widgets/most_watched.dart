@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:movie_app/cubit/most_watched_movie_cubit.dart';
+import 'package:movie_app/dependency_injection/dependency-injection.dart';
 
 import '../Screens/movie_details_screen.dart';
 class MostWatched extends StatelessWidget {
+
   const MostWatched({
     super.key,
   });
@@ -24,7 +26,7 @@ class MostWatched extends StatelessWidget {
           return Stack(
               children:<Widget>[
                 GestureDetector(
-                  onTap: ()=> Navigator.of(context).push(MaterialPageRoute(builder: (context) => const MovieDetails())),
+                  onTap: ()=> Navigator.of(context).push(MaterialPageRoute(builder: (context) =>  MovieDetails(id:state.mostWatchedMovie.id))),
                   child: Container(
                     width: MediaQuery.of(context).size.width*0.8,
                     height:  MediaQuery.of(context).size.height*0.3,
@@ -34,7 +36,8 @@ class MostWatched extends StatelessWidget {
                     ),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(14),
-                      child: Image.network("https://static1.srcdn.com/wordpress/wp-content/uploads/2022/05/Every-marvel-character-who-appears-in-Doctor-strange-multiverse-of-madness.jpg", fit: BoxFit.cover),
+                      child: Image(image: NetworkImage('https://image.tmdb.org/t/p/w500/${state.mostWatchedMovie.poster_path}'),fit:
+                        BoxFit.cover,),
                     ),
                   ),
                 ),
@@ -45,7 +48,7 @@ class MostWatched extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children:  [
                       Text(
-                        state.mostWatchedMovie.name ?? '',
+                        state.mostWatchedMovie.original_title ?? '',
                         style: GoogleFonts.bebasNeue(
                             color: Colors.white,
                             fontSize: 18,
@@ -56,7 +59,7 @@ class MostWatched extends StatelessWidget {
                       const SizedBox(height: 5,),
                       Text(
                         state.mostWatchedMovie.tagline?? '',
-                        style: GoogleFonts.aboreto(
+                        style: GoogleFonts.abhayaLibre(
                             color: Colors.white,
                             fontSize: 10,
                             letterSpacing: 3
@@ -118,3 +121,4 @@ class MostWatched extends StatelessWidget {
 );
   }
 }
+//Image.network("https://static1.srcdn.com/wordpress/wp-content/uploads/2022/05/Every-marvel-character-who-appears-in-Doctor-strange-multiverse-of-madness.jpg", fit: BoxFit.cover),

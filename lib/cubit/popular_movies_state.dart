@@ -7,7 +7,10 @@ class PopularMoviesInitial extends PopularMoviesState {}
 
 class PopularMoviesLoading extends PopularMoviesState {}
 
-class PopularMoviesSuccess extends PopularMoviesState {}
+class PopularMoviesSuccess extends PopularMoviesState {
+  final ListMovies popularMovie;
+   PopularMoviesSuccess(this.popularMovie);
+}
 
 class PopularMoviesFailure extends PopularMoviesState {
   String? error ;

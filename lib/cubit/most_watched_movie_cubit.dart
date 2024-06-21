@@ -1,18 +1,22 @@
 import 'package:bloc/bloc.dart';
-import 'package:meta/meta.dart';
-import 'package:movie_app/data/movie_model.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:movie_app/repo/movie_repo.dart';
 
-import '../data/api_service.dart';
+import '../models/movie_model.dart';
+import '../repo/movie_repo_impl.dart';
 
 part 'most_watched_movie_state.dart';
 
 class MovieCubit extends Cubit<MovieState> {
   MovieCubit() : super(MovieInitial());
 
-   Future<void> fetchMostWatched () async {
+  final MovieRepo movieRepo = MovieRepoImpl();
+  // MovieRepo _movieRepo;
+
+  Future<void> fetchMostWatched() async {
     emit(MovieLoading());
-    try{
-      MostWatchedMovie mostWatchedMovie =await ApiService().fetchMostWatchedMovie();
+    try {
+      final Movie mostWatchedMovie = await movieRepo.fetchMostWatchedMovie();
       emit(MovieSuccess(mostWatchedMovie));
     }catch(e){
      emit(MovieError(error: e.toString()));

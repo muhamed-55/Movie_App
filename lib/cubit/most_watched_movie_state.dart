@@ -9,7 +9,7 @@ class MovieInitial extends MovieState {}
 class MovieLoading extends MovieState{}
 
 class MovieSuccess extends MovieState{
-  final MostWatchedMovie mostWatchedMovie;
+  final Movie mostWatchedMovie;
   MovieSuccess(this.mostWatchedMovie);
 }
 
