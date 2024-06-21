@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app/cubit/most_watched_movie_cubit.dart';
+import 'package:movie_app/dependency_injection/dependency-injection.dart';
 
 
 import '../Screens/movie_details_screen.dart';
@@ -14,7 +15,7 @@ class MostWatched extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return BlocProvider(
-  create: (context) => MovieCubit()..fetchMostWatched(),
+  create: (context) => getIt<MovieCubit>()..fetchMostWatched(),
   child: Builder(
     builder: (context) {
       return BlocBuilder<MovieCubit, MovieState>(

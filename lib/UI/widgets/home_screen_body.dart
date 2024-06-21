@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app/cubit/popular_movies_cubit.dart';
+import 'package:movie_app/dependency_injection/dependency-injection.dart';
 import 'most_watched.dart';
 import 'popular_movie_card.dart';
 import 'package:movie_app/UI/widgets/search_bar.dart';
@@ -45,7 +46,7 @@ class HomeScreenContent extends StatelessWidget {
           SizedBox(
             height: 300,
             child: BlocProvider(
-              create: (context) => PopularMoviesCubit()..fetchPopularMovie(),
+              create: (context) => getIt<PopularMoviesCubit>()..fetchPopularMovie(),
               child: Builder(
                 builder: (context) {
                   return BlocBuilder<PopularMoviesCubit, PopularMoviesState>(

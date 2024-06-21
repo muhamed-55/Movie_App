@@ -1,17 +1,16 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:movie_app/repo/movie_repo.dart';
-
+import 'package:injectable/injectable.dart';
 import '../models/movie_model.dart';
-import '../repo/movie_repo_impl.dart';
-
 part 'most_watched_movie_state.dart';
 
+@Injectable()
 class MovieCubit extends Cubit<MovieState> {
-  MovieCubit() : super(MovieInitial());
+  MovieCubit(this.movieRepo) : super(MovieInitial());
 
-  final MovieRepo movieRepo = MovieRepoImpl();
-  // MovieRepo _movieRepo;
+  //final MovieRepo movieRepo = MovieRepoImpl();
+   MovieRepo movieRepo;
 
   Future<void> fetchMostWatched() async {
     emit(MovieLoading());

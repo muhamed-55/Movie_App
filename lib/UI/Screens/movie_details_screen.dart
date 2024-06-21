@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app/cubit/movie_details_cubit.dart';
+import 'package:movie_app/dependency_injection/dependency-injection.dart';
 import '../widgets/bottom_navbar.dart';
-import 'dart:ui';
 
 class MovieDetails extends StatelessWidget {
   final int id;
@@ -10,7 +10,7 @@ class MovieDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => MovieDetailsCubit()..fetchMovieDetails(id),
+      create: (context) => getIt<MovieDetailsCubit>()..fetchMovieDetails(id),
       child: Scaffold(
         backgroundColor: Colors.black,
         bottomNavigationBar: bottomNavBar(context),

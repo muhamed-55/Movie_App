@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app/dependency_injection/dependency-injection.dart';
 
 
 import 'UI/Screens/home_screen.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  configureDependencies();
   runApp(const MyApp());
 }
 

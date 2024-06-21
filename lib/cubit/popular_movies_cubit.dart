@@ -2,16 +2,16 @@ import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 import 'package:movie_app/models/list_movies.dart';
 import 'package:movie_app/repo/movie_repo.dart';
-
-import '../repo/movie_repo_impl.dart';
+import 'package:injectable/injectable.dart';
 
 part 'popular_movies_state.dart';
 
+@Injectable()
 class PopularMoviesCubit extends Cubit<PopularMoviesState> {
-  PopularMoviesCubit() : super(PopularMoviesInitial());
+  PopularMoviesCubit(this.movieRepo) : super(PopularMoviesInitial());
 
-  final MovieRepo movieRepo = MovieRepoImpl();
-
+  //final MovieRepo movieRepo = MovieRepoImpl();
+MovieRepo movieRepo ;
   Future<void> fetchPopularMovie() async{
     emit(PopularMoviesLoading());
     try{
