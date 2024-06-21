@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 import '../Screens/movie_details_screen.dart';
 
 class PopularMovieCard extends StatelessWidget {
@@ -33,9 +31,9 @@ class PopularMovieCard extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 10.0,top: 10),
-                    child: Text('IMDB',style: GoogleFonts.abhayaLibre(color: Colors.white,fontSize: 18),),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 10.0,top: 10),
+                    child: Text('IMDB',style: TextStyle(color: Colors.white,fontSize: 18),),
                   ),
                   Row(
                     children: [

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:movie_app/cubit/movie_details_cubit.dart';
 import '../widgets/bottom_navbar.dart';
+import 'dart:ui';
+
 class MovieDetails extends StatelessWidget {
   final int id;
   const MovieDetails({super.key, required this.id});
@@ -110,12 +111,12 @@ class MovieDetails extends StatelessWidget {
                             padding: const EdgeInsets.all(8.0),
                             child: Row(
                               children: [
-                                Text('IMDB', style: GoogleFonts.abhayaLibre(
+                                const Text('IMDB', style: TextStyle(
                                     color: Colors.black,
                                     fontSize: 15,
                                     fontWeight: FontWeight.bold),),
                                 const SizedBox(width: 5,),
-                                Text(state.movieDetails.vote_average.toString(), style: GoogleFonts.bebasNeue(
+                                Text(state.movieDetails.vote_average.toString(), style: const TextStyle(
                                     color: Colors.black, fontSize: 15),),
                               ],
                             ),
@@ -135,9 +136,9 @@ class MovieDetails extends StatelessWidget {
                             color: Colors.black54,
                             border: Border.all(width: 1, color: Colors.white10),
                           ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Text(' Action ', style: GoogleFonts.adamina(
+                          child: const Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Text(' Action ', style: TextStyle(
                                 color: Colors.white, fontSize: 10),),
                           ),
                         ),
@@ -154,7 +155,7 @@ class MovieDetails extends StatelessWidget {
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Text('${state.movieDetails.runtime}min',
-                              style: GoogleFonts.adamina(
+                              style: const TextStyle(
                                   color: Colors.white, fontSize: 10),),
                           ),
                         ),
@@ -165,7 +166,7 @@ class MovieDetails extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(left: 20.0),
                     child: Text(state.movieDetails.original_title!,
-                      style: GoogleFonts.bebasNeue(fontSize: 30, color: Colors
+                      style: TextStyle(fontSize: 30, color: Colors
                           .red[900], letterSpacing: 1),),
                   ),
                   const SizedBox(height: 10,),

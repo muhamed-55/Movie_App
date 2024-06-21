@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:movie_app/cubit/popular_movies_cubit.dart';
 import 'most_watched.dart';
 import 'popular_movie_card.dart';
-import 'search_bar.dart';
+import 'package:movie_app/UI/widgets/search_bar.dart';
 
 class HomeScreenContent extends StatelessWidget {
   const HomeScreenContent({
@@ -20,11 +19,11 @@ class HomeScreenContent extends StatelessWidget {
           const SizedBox(
             height: 25,
           ),
-          const SearchBar(),
+          const Search_Bar(),
           const SizedBox(height: 30,),
-          Padding(
-            padding: const EdgeInsets.only(left: 40.0),
-            child: Text("Most Watched Movies",style: GoogleFonts.aBeeZee(color: Colors.white,fontSize: 14 ,fontWeight: FontWeight.bold),),
+          const Padding(
+            padding: EdgeInsets.only(left: 40.0),
+            child: Text("Most Watched Movies",style: TextStyle(color: Colors.white,fontSize: 14 ,fontWeight: FontWeight.bold),),
           ),
           const SizedBox(height:10,),
           const Center(child: MostWatched(),),
@@ -32,13 +31,13 @@ class HomeScreenContent extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children:  [
-              Padding(
-                padding: const  EdgeInsets.only(left: 40.0),
-                child: Text("Popular Movies",style: GoogleFonts.abhayaLibre(color: Colors.white,fontSize: 14),),
+              const Padding(
+                padding: EdgeInsets.only(left: 40.0),
+                child: Text("Popular Movies",style:TextStyle(color: Colors.white,fontSize: 14),),
               ),
               Padding(
                 padding: const EdgeInsets.only(right: 40.0),
-                child: Text("See More",style: GoogleFonts.abhayaLibre(color: Colors.red[500],fontSize: 14),),
+                child: Text("See More",style: TextStyle(color: Colors.red[500],fontSize: 14),),
               ),
             ],
           ),

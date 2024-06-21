@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:movie_app/cubit/most_watched_movie_cubit.dart';
-import 'package:movie_app/dependency_injection/dependency-injection.dart';
+
 
 import '../Screens/movie_details_screen.dart';
 class MostWatched extends StatelessWidget {
@@ -49,7 +48,7 @@ class MostWatched extends StatelessWidget {
                     children:  [
                       Text(
                         state.mostWatchedMovie.original_title ?? '',
-                        style: GoogleFonts.bebasNeue(
+                        style: const TextStyle(
                             color: Colors.white,
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
@@ -59,7 +58,7 @@ class MostWatched extends StatelessWidget {
                       const SizedBox(height: 5,),
                       Text(
                         state.mostWatchedMovie.tagline?? '',
-                        style: GoogleFonts.abhayaLibre(
+                        style: const TextStyle(
                             color: Colors.white,
                             fontSize: 10,
                             letterSpacing: 3

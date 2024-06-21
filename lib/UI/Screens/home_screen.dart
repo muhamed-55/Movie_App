@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import '../widgets/home_screen_body.dart';
 import '../widgets/bottom_navbar.dart';
 
@@ -31,18 +30,18 @@ class _HomeScreenState extends State<HomeScreen> {
               padding: const EdgeInsets.only(left: 12.0),
               child: Text(
                 "HELLO MOHAMED!",
-                style: GoogleFonts.bebasNeue(
+                style: TextStyle(
                   color: Colors.red[900],
                   fontSize: 22,
                   letterSpacing: 3,
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 12.0),
+            const Padding(
+              padding: EdgeInsets.only(left: 12.0),
               child: Text(
                 "Watch your favorite movie here...",
-                style: GoogleFonts.abel(
+                style: TextStyle(
                   color: Colors.white,
                   fontSize: 15,
                   letterSpacing: 1,
