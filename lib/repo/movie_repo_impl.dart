@@ -5,7 +5,6 @@ import 'package:movie_app/repo/movie_repo.dart';
 import '../models/movie_model.dart';
 import 'package:injectable/injectable.dart';
 
-@named
 @Injectable(as: MovieRepo)
 class MovieRepoImpl implements MovieRepo {
 
